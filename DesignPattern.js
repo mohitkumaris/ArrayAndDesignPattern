@@ -32,5 +32,24 @@ People1.PrintTemp();
 
 /*
 Constructor Design Pattern
+1. Function act as an Object
+2. No need to  create an Object inside the function
  */
+
+var peopleConstructor=function (name,age,state) {
+
+    this.name=name;
+    this.age=age;
+    this.state=state;
+
+    this.PrintPeople=function () {
+
+        console.log(this.name + ',' + this.age + ',' + this.state);
+    };
+
+};
+
+console.log("Constructor Design Pattern");
+var peopleObject=new peopleConstructor('mohit',33,'delhi');
+peopleObject.PrintPeople();
 
