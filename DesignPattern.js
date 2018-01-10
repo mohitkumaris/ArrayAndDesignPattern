@@ -8,7 +8,7 @@ Factory Design Pattern
 2. Create an Object with some properties
 3. As it creates a factory for multiple instantiation
  */
-
+'use strict'
 var peopleFactory=function (name,age,state) {
 
     var temp={};
@@ -49,7 +49,7 @@ var peopleConstructor=function (name,age,state) {
 
 };
 
-console.log("Constructor Design Pattern");
+console.log("Constructor Design Pattern Starts here");
 var peopleObject=new peopleConstructor('mohit',33,'delhi');
 peopleObject.PrintPeople();
 
