@@ -53,3 +53,41 @@ console.log("Constructor Design Pattern Starts here");
 var peopleObject=new peopleConstructor('mohit',33,'delhi');
 peopleObject.PrintPeople();
 
+/*
+Prototype Design Pattern
+When you create a function a Prototype object is always created
+That is where its advantage comes as in constructor design pattern
+when you create an instance the method inside constructor is
+always created but in case prototype no more creation again and again.
+
+ */
+
+function PrototypePattern(name,age) {
+
+    this.name=name;
+    this.age=age;
+}
+
+PrototypePattern.prototype.display=function () {
+
+    console.log(this.name + ','+ this.age);
+};
+
+/*
+Module pattern is simple way to encapsulate methods
+Its just object literal.
+
+ */
+
+var modulePattern=function () {
+
+    return{
+
+        getData:function (data) {
+
+            console.log(data);
+        }
+    }
+};
+
+module.exports=modulePattern();

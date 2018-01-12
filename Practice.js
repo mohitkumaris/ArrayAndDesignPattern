@@ -84,6 +84,7 @@ __proto__ is an instance of object created by
  function object.
 
 
+
  */
 
 var cat ={name:'billu',age:12};
@@ -121,7 +122,7 @@ class Animal{
 
         this.voice=voice || 'grunt';
     }
-
+// Prototype in class
     Speak(){
 
         console.log(this.voice);
