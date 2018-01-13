@@ -4,9 +4,10 @@
 // Creational Design Patterns
 /*
 Factory Design Pattern
-1. Create a Factory function
+1. Creates diffrent object based on need.   
 2. Create an Object with some properties
 3. As it creates a factory for multiple instantiation
+4
  */
 'use strict'
 var peopleFactory=function (name,age,state) {
@@ -26,8 +27,8 @@ var peopleFactory=function (name,age,state) {
 };
 
 
-var People1= peopleFactory('Mohit',33,'delhi');
-People1.PrintTemp();
+//var People1= peopleFactory('Mohit',33,'delhi');
+//People1.PrintTemp();
 
 
 /*
@@ -91,3 +92,42 @@ var modulePattern=function () {
 };
 
 module.exports=modulePattern();
+
+/*
+Used to restrict an object to one instance of that object 
+across the application.
+
+1. Remembers the last time you used it and hand back same instance.
+
+*/
+
+var TaskRepo=(function(){
+
+    var taskrepo;
+    function CreateTaskRepo() {
+         var taskrepo=new Object("task");           
+         return taskrepo;
+    }
+     
+    return {
+       
+        getInstance:function(){
+
+            if(!taskrepo){
+
+                taskrepo= CreateTaskRepo();
+            }
+            return taskrepo;
+        }
+
+    }
+   
+
+})();
+
+var taskrepo1=new TaskRepo.getInstance();
+var taskrepo2= new TaskRepo.getInstance();
+
+if(taskrepo1 === taskrepo2){
+    console.log("same instance");
+}
